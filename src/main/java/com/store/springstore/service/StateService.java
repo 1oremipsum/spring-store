@@ -1,6 +1,4 @@
 package com.store.springstore.service;
-
-import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,13 +21,11 @@ public class StateService {
     }
 
     public State insert(State state){
-        state.setCreationDate(new Date());
         State newState = repository.saveAndFlush(state);
         return newState;
     }
 
     public State update(State state){
-        state.setUpdateDate(new Date());
         return repository.saveAndFlush(state);
     }
 
